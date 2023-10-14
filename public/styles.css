@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap");
+
 :root {
   --primary-color: #ee6f00;
-  --secondary-color: white;
+  --secondary-color: rgba(255, 255, 255, 0.5);
   --accent-color: white;
 }
 
@@ -8,6 +10,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
 }
 
 html {
@@ -40,9 +44,9 @@ body {
   margin: 0;
   padding: 20px 50px;
   color: aliceblue;
-  background-color: rgb(255, 255, 255, 0.5);
+  background-color: var(--secondary-color);
   border-radius: 30px;
-  /* border: solid 3px var(--accent-color); */
+  /* border: solid 3px var(--primary-color); */
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -56,7 +60,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin: 0 10px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--secondary-color);
   border-radius: 25px;
   /* background-color: #ffffff; */
   margin: 5% 0;
@@ -86,10 +90,34 @@ body {
   cursor: pointer;
 }
 
-h1 {
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   color: black;
+  /* border: solid purple; */
+  padding-top: 4%;
+}
+
+h1 {
+  /* color: black; */
   padding: 0 10px;
   padding-bottom: 25px;
+  font-size: 32px;
+  font-weight: 700;
+  /* border: solid yellow; */
+}
+
+.clear {
+  border: solid black 2px;
+  padding: 5px 15px;
+  margin-right: -10px;
+  /* height: 40px; */
+  font-size: 24px;
+  font-weight: 500;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: var(--secondary-color);
 }
 
 .scrollable {
@@ -102,18 +130,46 @@ h1 {
   justify-content: baseline;
   list-style: none;
   padding: 0px;
+  /* border: solid green; */
 }
 
 .item {
   list-style: none;
   color: black;
-  padding: 5px 75px;
-  cursor: pointer;
-  border: solid red;
+  padding: 25px 10px 0px 30px;
+  /* border: solid red; */
   font-weight: 700;
-  font-size: large;
+  font-size: 25px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .check {
   text-decoration: line-through;
+}
+
+.text {
+  cursor: pointer;
+}
+
+.trash {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Set the background color of the thumb */
+  border-radius: 6px; /* Add rounded corners to the thumb */
+}
+
+::-webkit-scrollbar-track {
+  background: var(
+    --secondary-color
+  ); /* Set the background color of the track */
+  border-radius: 6px;
 }
