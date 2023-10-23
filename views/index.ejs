@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🛒Shopping List</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container main">
+      <div class="list">
+        <div class="top">
+          <h1>Shopping List 🛒</h1>
+          <!-- <h2 class="clear">Clear</h2> -->
+        </div>
+        <!-- <div class="scrollable"> -->
+        <ul class="scrollable">
+          <% items.forEach(function(item, index) { %>
+          <li class="item">
+            <form method="POST" action="/toggleCheck">
+              <input type="hidden" name="index" value="<%= index %>" />
+              <button type="submit" class="inv-button">
+                <span class="text <%= item.checked ? 'checked' : '' %>"
+                  ><%= item.text %></span
+                >
+              </button>
+            </form>
+            <form method="POST" action="/remove">
+              <input type="hidden" name="index" value="<%= index %>" />
+              <button type="submit" class="inv-button">
+                <img
+                  class="trash"
+                  src="icons/icons8-trash-can.svg"
+                  width="30px"
+                />
+              </button>
+            </form>
+          </li>
+          <% }); %>
+        </ul>
+        <!-- </div> -->
+        <form method="POST" action="/add" class="todo-form">
+          <input
+            type="text"
+            name="newItem"
+            id="item-input"
+            placeholder="Add a new item"
+          />
+          <button type="submit" id="add-item">+</button>
+        </form>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- <script type="module" src="/functionality.js"></script> -->
+    <script type="module" src="../index.js"></script>
+  </body>
+</html>
